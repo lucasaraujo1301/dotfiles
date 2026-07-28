@@ -22,5 +22,7 @@ link() {
 }
 
 link "$CONFIG_SRC/fish/config.fish" "$HOME/.config/fish/config.fish"
-link "$CONFIG_SRC/starship.toml" "$HOME/.config/starship.toml"
+link "$CONFIG_SRC/starship/starship.toml" "$HOME/.config/starship/starship.toml"
 link "$CONFIG_SRC/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+link "$CONFIG_SRC/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
+link "$CONFIG_SRC/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"

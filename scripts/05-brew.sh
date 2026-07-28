@@ -34,3 +34,6 @@ echo "$BREW_BIN shellenv | source" > "$HOME/.config/fish/conf.d/homebrew.fish"
 
 grep -qxF "eval \"\$($BREW_BIN shellenv)\"" "$HOME/.bashrc" 2>/dev/null || \
     echo "eval \"\$($BREW_BIN shellenv)\"" >> "$HOME/.bashrc"
+
+echo "==> Installing shell alias prerequisites via Homebrew"
+brew install lsd bat ripgrep

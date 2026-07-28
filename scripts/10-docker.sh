@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if command -v docker &> /dev/null && \
+if dpkg-query -W -f='${db:Status-Status}' docker-compose-plugin 2> /dev/null | grep -qx installed && \
+   command -v docker &> /dev/null && \
    docker compose version &> /dev/null && \
    docker buildx version &> /dev/null; then
     echo "==> Docker already installed, skipping"
@@ -22,6 +23,13 @@ else
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
     sudo apt-get update
+    sudo apt-get remove -y \
+        docker.io \
+        docker-compose \
+        docker-compose-v2 \
+        docker-doc \
+        docker-buildx \
+        podman-docker
     sudo apt-get install -y \
         docker-ce \
         docker-ce-cli \
