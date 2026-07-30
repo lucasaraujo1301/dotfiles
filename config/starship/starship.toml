@@ -1,6 +1,7 @@
 add_newline = false
 format = """
 $time\
+$python\
 $directory\
 $git_branch\
 $git_commit\
@@ -23,3 +24,7 @@ format = "[$time]($style) | "
 
 [cmd_duration]
 format = "[$duration]($style) "
+
+[python]
+format = '[🐍 $virtualenv]($style) | '
+style = "yellow bold"
